@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
 import { useStore } from '@/store/index';
 
 defineProps<{ msg: string }>();

@@ -1,3 +1,4 @@
+import { defineComponent } from 'vue';
 const Hello = defineComponent({
   name: 'Hello',
   props: {
@@ -7,13 +8,8 @@ const Hello = defineComponent({
     }
   },
   setup(props) {
-
-    return () => (
-      <div>
-        {props.msg}
-      </div>
-    )
+    return () => <div>{props.msg}</div>;
   }
-})
+});
 
-export default Hello
+export default Hello;

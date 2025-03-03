@@ -6,8 +6,8 @@
   },
   "parser": "vue-eslint-parser",
   "extends": [
-    "plugin:vue/vue3-recommended",
     "eslint:recommended",
+    "plugin:vue/vue3-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "eslint-config-prettier"
@@ -20,13 +20,67 @@
       "jsx": true
     }
   },
-  "plugins": ["vue", "@typescript-eslint", "prettier"],
+  "plugins": ["vue", "@typescript-eslint", "prettier", "import"],
   "rules": {
-    "@typescript-eslint/ban-types": "off", // 或者根据需要配置为其他值
+    "eqeqeq": 2, // 严格等号逻辑
+    "no-unused-vars": 1, // 未使用的变量进行警告
+    "arrow-parens": [0, "always"], // 箭头函数参数应该始终包含括号
+    "arrow-body-style": [1, "as-needed"], // 箭头函数可以去掉括号就去掉括号
+    "prettier/prettier": ["error", { "semi": true }],
     "vue/multi-word-component-names": "off", // 禁用vue文件强制多个单词命名
+    "@typescript-eslint/no-explicit-any": ["off", {}], //允许使用any
+    "@typescript-eslint/no-this-alias": [
+      "error",
+      {
+        "allowedNames": ["that"] // this可用的局部变量名称
+      }
+    ],
     "@typescript-eslint/ban-ts-comment": "off", //允许使用@ts-ignore
     "@typescript-eslint/no-non-null-assertion": "off", //允许使用非空断言
+    "no-console": [
+      //提交时不允许有console.log
+      "warn",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
     "no-debugger": "warn", //提交时不允许有debugger
-    "vue/comment-directive": "off"
+    "vue/comment-directive": "off",
+    // 确保没有重复引入
+    "import/no-duplicates": "error",
+    // 确保 import 语句按照组分类并排序
+    "import/order": [
+      "error",
+      {
+        // builtin：内置模块;external：第三方模块;internal：内部引用;sibling：兄弟依赖;parent：父节点依赖;index：index 文件依赖;unknown：未知依赖
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type",
+          "unknown"
+        ],
+        // vue的引入将会排在第一位
+        "pathGroups": [
+          {
+            "pattern": "vue",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        // newlines-between 不同组之间是否进行换行
+        "newlines-between": "always",
+        // alphabetize 根据字母顺序对每个组内的顺序进行排序
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   }
 }
