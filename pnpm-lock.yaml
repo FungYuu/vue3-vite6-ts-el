@@ -20,9 +20,6 @@ importers:
       element-plus:
         specifier: ^2.9.5
         version: 2.9.5(vue@3.5.13(typescript@5.7.3))
-      eslint-plugin-import:
-        specifier: ^2.31.0
-        version: 2.31.0(@typescript-eslint/parser@8.25.0(eslint@8.57.0)(typescript@5.7.3))(eslint@8.57.0)
       normalize.css:
         specifier: ^8.0.1
         version: 8.0.1
@@ -63,6 +60,9 @@ importers:
       eslint-config-prettier:
         specifier: ^10.0.2
         version: 10.0.2(eslint@8.57.0)
+      eslint-plugin-import:
+        specifier: ^2.31.0
+        version: 2.31.0(@typescript-eslint/parser@8.25.0(eslint@8.57.0)(typescript@5.7.3))(eslint@8.57.0)
       eslint-plugin-prettier:
         specifier: ^5.2.3
         version: 5.2.3(eslint-config-prettier@10.0.2(eslint@8.57.0))(eslint@8.57.0)(prettier@3.5.3)
