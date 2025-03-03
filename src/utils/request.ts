@@ -1,16 +1,13 @@
 import axios from 'axios';
+
 import type { AxiosInstance, InternalAxiosRequestConfig } from 'axios';
 
 const request: AxiosInstance = axios.create({});
 
 // request interceptor
 request.interceptors.request.use(
-  (config): InternalAxiosRequestConfig => {
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (config): InternalAxiosRequestConfig => config,
+  (error) => Promise.reject(error)
 );
 
 // response interceptor
@@ -33,8 +30,6 @@ request.interceptors.response.use(
       return Promise.reject(response);
     }
   },
-  async (error) => {
-    return Promise.reject(error);
-  }
+  async (error) => Promise.reject(error)
 );
 export default request;

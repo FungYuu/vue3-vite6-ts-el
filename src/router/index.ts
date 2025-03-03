@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+
 import type { RouteRecordRaw } from 'vue-router';
 
 import * as PAGE_URL from '@/constants/page-url-constants';
