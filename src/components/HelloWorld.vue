@@ -13,7 +13,7 @@ const store = useStore();
 
   <el-button type="primary">{{ store.username }}</el-button>
 
-  <el-icon><Plus /></el-icon>
+  <el-icon class="ml20"><Plus /></el-icon>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
@@ -40,8 +40,8 @@ const store = useStore();
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .read-the-docs {
-  color: #888;
+  color: $color-main;
 }
 </style>

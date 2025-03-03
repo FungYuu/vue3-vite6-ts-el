@@ -1,0 +1,107 @@
+@use './mixins.scss' as *;
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.action-link {
+  color:$color--primary;
+  cursor: pointer;
+}
+
+@each $width in 0, 5, 10, 15, 20, 25, 30 {
+  .mt#{$width} {
+    margin-top: #{$width}px !important;
+  }
+  .pt#{$width} {
+    padding-top: #{$width}px !important;
+  }
+  .mr#{$width} {
+    margin-right: #{$width}px !important;
+  }
+  .pr#{$width} {
+    padding-right: #{$width}px !important;
+  }
+  .mb#{$width} {
+    margin-bottom: #{$width}px !important;
+  }
+  .pb#{$width} {
+    padding-bottom: #{$width}px !important;
+  }
+  .ml#{$width} {
+    margin-left: #{$width}px !important;
+  }
+  .pl#{$width} {
+    padding-left: #{$width}px !important;
+  }
+  .m#{$width} {
+    margin: #{$width}px !important;
+  }
+  .p#{$width} {
+    padding: #{$width}px !important;
+  }
+}
+
+.block {
+  display: block;
+  width: 100%;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-none {
+  flex: none;
+}
+.flex-auto {
+  flex: auto;
+}
+.form-item-with-tooltip .el-form-item__label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex-row-inline {
+  display: inline-flex;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.color-danger {
+  color: $color-danger;
+}
+
+.color-primary {
+  color: $color--primary;
+}
+
+.color-success {
+  color: $color-success;
+}

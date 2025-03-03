@@ -34,5 +34,12 @@ export default defineConfig({
     alias: {
       '@': pathSrc // @代替src
     }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/assets/css/mixins.scss" as *;`
+      }
+    }
   }
 });
