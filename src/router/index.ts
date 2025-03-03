@@ -9,11 +9,20 @@ const routes: RouteRecordRaw[] = [
     path: '/',
     redirect: PAGE_URL.PAGE_URL_HOME
   },
-
   {
-    path: PAGE_URL.PAGE_URL_HOME,
-    name: PAGE_URL.PAGE_URL_HOME,
-    component: () => import('@/App.vue')
+    path: '/layout',
+    name: '/layout',
+    component: () => import('@/pages/layout.vue'),
+    children: [
+      {
+        path: PAGE_URL.PAGE_URL_HOME,
+        name: PAGE_URL.PAGE_URL_HOME,
+        meta: {
+          title: 'home'
+        },
+        component: () => import('@/pages/home.vue')
+      }
+    ]
   }
 ];
 

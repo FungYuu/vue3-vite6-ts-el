@@ -1,32 +1,28 @@
-<script setup lang="ts">
-import Hello from '@/components/Hello';
-import HelloWorld from '@/components/HelloWorld.vue';
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <Hello msg="Hello TSX" />
-  <HelloWorld msg="Vite + Vue" />
+  <el-config-provider :locale="zhCn">
+    <Suspense>
+      <router-view></router-view>
+    </Suspense>
+  </el-config-provider>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+<script lang="ts" setup>
+// 全局配置国际化
+import { ElConfigProvider } from 'element-plus';
+import zhCn from 'element-plus/es/locale/lang/zh-cn';
+
+// 日期和时间本地化
+import 'dayjs/locale/zh-cn';
+</script>
+<style lang="scss">
+#app {
+  flex: auto;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 1250px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 </style>
