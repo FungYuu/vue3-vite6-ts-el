@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { useStore } from '@/store/index';
 
 defineProps<{ msg: string }>();
 
 const count = ref(0);
+
+const store = useStore();
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
 
-  <el-button type="primary">Primary</el-button>
+  <el-button type="primary">{{ store.username }}</el-button>
 
   <el-icon><Plus /></el-icon>
 
