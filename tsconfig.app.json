@@ -12,7 +12,10 @@
 
     "baseUrl": ".", //查询的基础路径
     "paths": { "@/*": ["src/*"] }, //路径映射,配合别名使用
-    "types": ["node", "element-plus/global"]
+    "types": ["node", "element-plus/global"],
+
+    "jsx": "preserve",
+    "jsxImportSource": "vue"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
