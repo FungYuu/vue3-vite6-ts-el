@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
+    "prepare": "husky",
+    "commit": "node_modules/cz-customizable/standalone.js",
     "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx --max-warnings 0"
   },
   "dependencies": {
@@ -21,17 +23,25 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
     "@types/node": "^22.13.8",
     "@typescript-eslint/eslint-plugin": "^8.25.0",
     "@typescript-eslint/parser": "^8.25.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitejs/plugin-vue-jsx": "^4.1.1",
     "@vue/tsconfig": "^0.7.0",
+    "commitizen": "^4.3.1",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.4.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^10.0.2",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-vue": "^9.32.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
     "prettier": "^3.5.3",
     "typescript": "~5.7.2",
     "unplugin-auto-import": "^19.1.1",
@@ -41,6 +51,14 @@
   },
   "engines": {
     "node": ">= 20"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.cjs"
+    }
   },
   "lint-staged": {
     "src/**/*.{vue,js,jsx,ts,tsx,json}": [

@@ -8,5 +8,5 @@
 - [x] element-plus
 - [x] sass
 - [x] tsx
-- [ ] git commit 规范
+- [x] git commit 规范
 - [x] 配置路径别名
