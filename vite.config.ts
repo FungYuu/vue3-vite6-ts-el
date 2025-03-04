@@ -55,5 +55,17 @@ export default defineConfig({
         additionalData: `@use "@/assets/css/mixins.scss" as *;`
       }
     }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vue: ['vue', 'pinia', 'vue-router']
+        },
+        chunkFileNames: 'static/js/[name]-[hash].js',
+        entryFileNames: 'static/js/[name]-[hash].js',
+        assetFileNames: 'static/[ext]/[name]-[hash].[ext]'
+      }
+    }
   }
 });
