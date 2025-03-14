@@ -54,14 +54,14 @@
       {
         // builtin：内置模块;external：第三方模块;internal：内部引用;sibling：兄弟依赖;parent：父节点依赖;index：index 文件依赖;unknown：未知依赖
         "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index",
-          "object",
-          "type",
+          "builtin", // 内置模块（如 'fs'）
+          "external", // 外部依赖（如 'vue'）
+          "internal", // 内部路径别名（如 '@/utils'）
+          "parent", // 父级目录（如 '../foo'）
+          "sibling", // 同级目录（如 './constants'）
+          "index", // 当前目录的 index 文件
+          "object", // 对象导入（如 import { x } from 'y'）
+          "type", // 类型导入（如 import type { ... }）
           "unknown"
         ],
         // vue的引入将会排在第一位
